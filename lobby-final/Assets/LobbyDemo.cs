@@ -63,7 +63,13 @@ public class LobbyDemo : MonoBehaviour
                 // store the playerName
                 // playerName also used to register local player to the lobby server
                 playerName_ = playerName;
-                NetworkClient.Instance.CheckIn(playerName);
+                NetworkClient.Instance.CheckIn(playerName, (bool successful, string error) =>
+                {
+                    if (!successful)
+                    {
+                        Debug.LogError(error);
+                    }
+                });
             }
         });
     }
