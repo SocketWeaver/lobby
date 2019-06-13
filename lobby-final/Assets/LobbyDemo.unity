@@ -338,12 +338,12 @@ MonoBehaviour:
   m_Script: {fileID: -1755967976, guid: 6a67afbfe15ab9c4696e982c25d07a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loggingLevel: 3
-  API_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YzliMDViM2UyNzQ3NjAwMThkNGM0YTEiLCJzdGFnZSI6MTU1MzY2MzQxMTU0MywiaWF0IjoxNTUzNjYzNDExfQ.klZl04QtgSmFwxVblQL-W0nFavi1XLC-uiQMIYceQis
-  logFilePath: 
-  lobbyName: 
-  nodeRegion1: 
-  nodeRegion2: 
+  LoggingLevel: 3
+  API_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2Q1NzliNDFhMmY1ZTAwMTExOWRlMzIiLCJzdGFnZSI6MTU1NzQ5NDE5Njg4NywiaWF0IjoxNTU3NDk0MTk2fQ.iYGwOxHm8jjaW4v2S5OfhDjajeA4nNCDhTtZC1G_pWc
+  LogFilePath: 
+  LobbyName: 
+  NodeRegion1: 
+  NodeRegion2: 
 --- !u!1 &131019556
 GameObject:
   m_ObjectHideFlags: 0

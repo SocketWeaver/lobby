@@ -158,7 +158,7 @@ public class LobbyDemo : MonoBehaviour
     public void SendRoomMessage(string message)
     {
         Debug.Log("Send room message " + message);
-        NetworkClient.Lobby.MessageRoom(message, (bool successful, object arg2, SWLobbyError error) =>
+        NetworkClient.Lobby.MessageRoom(message, (bool successful, SWLobbyError error) =>
         {
             if (successful)
             {
