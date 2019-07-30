@@ -38,7 +38,7 @@ public class LobbyDemo : MonoBehaviour
         NetworkClient.Lobby.OnRoomMessageEvent += Lobby_OnRoomMessageEvent;
         NetworkClient.Lobby.OnPlayerMessageEvent += Lobby_OnPlayerMessageEvent;
 
-        NetworkClient.Lobby.OnLobbyConncetedEvent += Lobby_OnLobbyConncetedEvent;
+        NetworkClient.Lobby.OnLobbyConnectedEvent += Lobby_OnLobbyConncetedEvent;
     }
 
     void onDestroy()
@@ -51,7 +51,7 @@ public class LobbyDemo : MonoBehaviour
         NetworkClient.Lobby.OnRoomMessageEvent -= Lobby_OnRoomMessageEvent;
         NetworkClient.Lobby.OnPlayerMessageEvent -= Lobby_OnPlayerMessageEvent;
 
-        NetworkClient.Lobby.OnLobbyConncetedEvent -= Lobby_OnLobbyConncetedEvent;
+        NetworkClient.Lobby.OnLobbyConnectedEvent -= Lobby_OnLobbyConncetedEvent;
     }
 
     public void RegisterPlayer()

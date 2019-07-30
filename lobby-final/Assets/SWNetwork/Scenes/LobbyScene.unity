@@ -220,12 +220,9 @@ MonoBehaviour:
   m_Script: {fileID: -1755967976, guid: 6a67afbfe15ab9c4696e982c25d07a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loggingLevel: 3
+  LoggingLevel: 3
   API_KEY: 
-  logFilePath: 
-  lobbyName: 
-  nodeRegion1: 
-  nodeRegion2: 
+  LogFilePath: 
 --- !u!4 &216403692
 Transform:
   m_ObjectHideFlags: 0
