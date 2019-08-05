@@ -338,8 +338,8 @@ MonoBehaviour:
   m_Script: {fileID: -1755967976, guid: 6a67afbfe15ab9c4696e982c25d07a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoggingLevel: 3
-  API_KEY: 
+  LoggingLevel: 0
+  API_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDE4NjE2OWUzYzQwYjAwMTk5NmFkMzIiLCJzdGFnZSI6MTU2MTg3ODg4OTUwOCwiaWF0IjoxNTYxODc4ODg5fQ.Vs9R4-IKORY8b_48RSe6bFs7s8DWCzOLCNr-tu8oxGg
   LogFilePath: 
 --- !u!1 &131019556
 GameObject:

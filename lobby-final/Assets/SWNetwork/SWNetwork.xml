@@ -682,6 +682,11 @@
             </summary>
             <value>The game server ping.</value>
         </member>
+        <member name="E:SWNetwork.NetworkClient.OnGameServerDisconnectedEvent">
+            <summary>
+            Invoked when the local player failed to receive the heartbeat reply from the room game server in the last 8 seconds.
+            </summary>
+        </member>
         <member name="M:SWNetwork.NetworkClient.CheckIn(System.Action{System.Boolean,System.String})">
             <summary>
             Checking into the SocketWeaver services with a random generated unique player Id.
