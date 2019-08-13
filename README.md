@@ -23,7 +23,7 @@ The source code of this tutorial is hosted at: https://github.com/SocketWeaver/l
 
 ## The repository has two Unity Projects:
 ### Lobby-start
-We recommend you start with the Lobby-start and follow the steps of this tutorial to get the most out of it.
+We recommend you start with the Lobby-start start project and follow the steps of the tutorial to get the most out of it.
 ### Lobby-final
 The final lobby project.
 
