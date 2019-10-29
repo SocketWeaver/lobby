@@ -303,6 +303,16 @@
             Invoked when the local player connected to the lobby server.
             </summary>
         </member>
+        <member name="E:SWNetwork.SWLobby.OnLobbyDisconnectedEvent">
+            <summary>
+            Invoked when the local player failed to connect to the lobby server.
+            </summary>
+        </member>
+        <member name="E:SWNetwork.SWLobby.OnLobbyReconnectedEvent">
+            <summary>
+            Invoked when the local player reconnected to the lobby server.
+            </summary>
+        </member>
         <member name="E:SWNetwork.SWLobby.OnPlayerMessageEvent">
             <summary>
             Invoked when a new player message is received.
@@ -359,6 +369,11 @@
             Invoked when the player is kicked from the room by the room owner.
             </summary>
         </member>
+        <member name="M:SWNetwork.SWLobby.Reconnect">
+            <summary>
+            Reconnect to the lobby server
+            </summary>
+        </member>
         <member name="P:SWNetwork.SWLobby.PlayerId">
             <summary>
             Local player's Id
@@ -373,7 +388,7 @@
         </member>
         <member name="P:SWNetwork.SWLobby.RoomData">
             <summary>
-            Room Information. null if the local player is not in a room.
+            Room Information. You need to call GetRoomCustomData() to load the room information. null if the local player is not in a room.
             </summary>
             <value>The room data.</value>
         </member>
@@ -536,6 +551,7 @@
         <member name="M:SWNetwork.SWLobby.ChangeRoomProgressData(System.Object,System.Action{System.Boolean,SWNetwork.SWLobbyError})">
             <summary>
             Called by room owners to begin an asynchronous operation to change the progress data of their rooms using the specified serializable object.
+            Progress can be used to store room's progress.
             </summary>
             <param name="progressData">Serializable object progress data.</param>
             <param name="callback">The method to invoke when the change room progress data operation is complete.</param>
@@ -696,6 +712,14 @@
             <summary>
             Checking into the SocketWeaver services with specified player Id. Make sure the playerId is unique.
             </summary>
+        </member>
+        <member name="M:SWNetwork.NetworkClient.CheckOut(System.Action{System.Boolean,System.String})">
+            <summary>
+            Checking out of the SocketWeaver services.
+            Disconnects from the room game servers and leaves the lobby room.
+            All gameplay API and lobby API will stop working.
+            </summary>
+            <param name="callback"></param>
         </member>
         <member name="M:SWNetwork.NetworkClient.DisconnectFromRoom">
             <summary>
@@ -1003,11 +1027,31 @@
             This event is only delivered to the host player.
             </summary>
         </member>
+        <member name="P:SWNetwork.SceneSpawner.SpawnerId">
+            <summary>
+            Gets the SpawnerId assigned to the SceneSpawner
+            </summary>
+        </member>
         <member name="P:SWNetwork.SceneSpawner.IsReady">
             <summary>
             Gets a value indicating whether this <see cref="T:SWNetwork.SceneSpawner"/> is ready.
             </summary>
             <value><c>true</c> if is ready; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:SWNetwork.SceneSpawner.NumberOfPlayerPrefabs">
+            <summary>
+            Number of player prefabs
+            </summary>
+        </member>
+        <member name="P:SWNetwork.SceneSpawner.NumberOfSpawnPoints">
+            <summary>
+            Number of spawn points
+            </summary>
+        </member>
+        <member name="P:SWNetwork.SceneSpawner.NumberOfNonPlayerPrefabs">
+            <summary>
+            Number of non-player prefabs
+            </summary>
         </member>
         <member name="M:SWNetwork.SceneSpawner.SpawnForPlayer(System.Int32,System.Int32)">
             <summary>
@@ -1067,20 +1111,32 @@
         </member>
         <member name="M:SWNetwork.SWNetworkMessage.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:SWNetwork.SWNetworkMessage"/> class.
+            Initializes a new instance of SWNetworkMessage class.
             </summary>
         </member>
         <member name="M:SWNetwork.SWNetworkMessage.#ctor(System.Byte[],System.Boolean)">
             <summary>
-            Initializes a new instance of the <see cref="T:SWNetwork.SWNetworkMessage"/> class.
+            Initializes a new instance of SWNetworkMessage class.
             </summary>
             <param name="arr">Arr.</param>
             <param name="deepCopy">If set to <c>true</c> deep copy.</param>
         </member>
-        <member name="M:SWNetwork.SWNetworkMessage.allRead">
+        <member name="M:SWNetwork.SWNetworkMessage.AllRead">
             <summary>
             Indicate whether the data in the message has been read completely.
             </summary>
+        </member>
+        <member name="M:SWNetwork.SWNetworkMessage.GetLength">
+            <summary>
+            Length of the byte array of the SWNetworkMessage
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SWNetwork.SWNetworkMessage.ToArray">
+            <summary>
+            The byte array of the SWNetworkMessage
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:SWNetwork.SWNetworkMessage.Push(System.Boolean)">
             <summary>
@@ -1132,7 +1188,7 @@
             Push an UTF8 string value to the message. Max string length is 65,535.
             </summary>
         </member>
-        <member name="M:SWNetwork.SWNetworkMessage.pushByteArray(System.Byte[])">
+        <member name="M:SWNetwork.SWNetworkMessage.PushByteArray(System.Byte[])">
             <summary>
             Push a byte array to the message.
             </summary>
